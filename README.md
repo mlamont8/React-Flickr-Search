@@ -1,1 +1,1 @@
-Flickr Search App
+# Flickr Search in React
