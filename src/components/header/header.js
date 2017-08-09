@@ -1,12 +1,12 @@
 import React from 'react';
-import { Navbar, Nav ,NavItem } from 'react-bootstrap';
+import { Navbar, Nav ,NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 
 class Header extends React.Component{
 
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
               Flickr Search
@@ -19,6 +19,8 @@ class Header extends React.Component{
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+
+
     );
   }
 
