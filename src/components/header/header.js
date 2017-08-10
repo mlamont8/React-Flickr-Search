@@ -40,7 +40,7 @@ handleSubmit(event) {
 
           <Navbar.Collapse>
             <Navbar.Form pullRight>
-              <form  onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
                 <FormGroup >
                   <FormControl type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange}/>
                   {' '}
