@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from './components/header/header.js';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+import Home from './components/home/home.js';
+import Grid from './components/grid/grid.js';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
             <Header />
+              <div className="container-fluid">
+                <Route exact path="/" component={Home} />
+                <Route path="/results" component={Grid} />
+              </div>
+
       </div>
     );
   }
