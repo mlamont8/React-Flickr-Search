@@ -1,13 +1,13 @@
 import React from 'react';
-import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
-
+import { Navbar, FormGroup, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component{
 constructor(props) {
   super(props);
   this.state = {
     value: '',
-    searchTerm: ''
+
   };
   this.handleChange = this.handleChange.bind(this);
   this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +29,9 @@ handleSubmit(event) {
 
 
   render() {
+    const term = this.state.value;
     return (
+
       <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
@@ -40,11 +42,17 @@ handleSubmit(event) {
 
           <Navbar.Collapse>
             <Navbar.Form pullRight>
-              <form onSubmit={this.handleSubmit}>
+              <form>
                 <FormGroup >
                   <FormControl type="text" placeholder="Search" value={this.state.value} onChange={this.handleChange}/>
                   {' '}
-                  <Button type="submit">Submit</Button>
+                  <Link
+                    className="button"
+                    to={{
+                      pathname: '/results',
+                      search: '?term=' + term}}
+                      type="submit">Submit
+                    </Link>
                 </FormGroup>
               </form>
 
