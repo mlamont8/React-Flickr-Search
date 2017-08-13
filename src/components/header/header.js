@@ -17,7 +17,9 @@ constructor(props) {
 
 handleChange(event) {
   this.setState({
-    value: event.target.value
+    searchTerm: '',
+    value: event.target.value,
+    formSubmit: false
   })
 }
 
@@ -53,7 +55,7 @@ handleSubmit(event) {
                 </FormGroup>
               </form>
               </Navbar.Form>
-              
+
               {this.state.formSubmit && (
                 <Redirect to={{
                   pathname: '/results',
