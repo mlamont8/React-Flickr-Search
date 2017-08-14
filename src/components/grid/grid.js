@@ -1,13 +1,14 @@
 import React from 'react';
 import queryString from 'query-string';
 import axios from 'axios';
+import Cards from './../cards/cards.js';
 
 class Grid extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      results: [],
+      results: {},
       term: ''
     };
 
@@ -70,10 +71,16 @@ class Grid extends React.Component {
 
 
   render() {
-
+      var items = this.state
+      console.log(this.state.results)
     return (
 
-        <div>Grid Container</div>
+        <div className="gridContainer">
+          {this.state.results.map((item, index) =>
+            <Cards key={index}
+            value={item} />
+)}
+        </div>
     );
   }
 
