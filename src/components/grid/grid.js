@@ -8,7 +8,7 @@ class Grid extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: {},
+      results: [],
       term: ''
     };
 
@@ -71,14 +71,14 @@ class Grid extends React.Component {
 
 
   render() {
-      var items = this.state
-      console.log(this.state.results)
+      var items = this.state.results
+
     return (
 
         <div className="gridContainer">
-          {this.state.results.map((item, index) =>
+          {items.map((item, index) =>
             <Cards key={index}
-            value={item} />
+            cardItem={item} />
 )}
         </div>
     );
