@@ -10,9 +10,8 @@ class Cards extends React.Component {
       this.props.cardItem.server + '/' + this.props.cardItem.id + '_' + this.props.cardItem.secret +
       '_n.jpg';
     return(
-      <Thumbnail src= {cardUrl} alt="242x200">
-            <p>{this.props.cardItem.title}</p>
-
+      <Thumbnail className="image" src={cardUrl} alt="alt">
+            {/* <p>{this.props.cardItem.title}</p> */}
           </Thumbnail>
     )
   }

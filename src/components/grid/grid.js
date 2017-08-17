@@ -40,7 +40,7 @@ class Grid extends React.Component {
       api_key: '1dfbed40745d1f76dc935c78c30abf16',
       text: search,
       safe_search: '1',
-      per_page: '50',
+      per_page: '20',
       format: 'json',
       nojsoncallback: 1
   }

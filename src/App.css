@@ -1,3 +1,11 @@
 .gridContainer {
-  display: flex;
-  flex-wrap: wrap; }
+  columns: 20em;
+  column-gap: 1em; }
+
+.image {
+  border-radius: 10px;
+  overflow: hidden; }
+
+body {
+  margin: 0;
+  background: #f3f3f3; }

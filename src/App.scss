@@ -1,5 +1,11 @@
 @import "./components/header/header.scss";
 @import "./components/grid/grid.scss";
+@import "./components/cards/cards.scss";
 // .App {
 //   align-items: center;
 // }
+
+body {
+  margin: 0;
+  background: #f3f3f3;
+}

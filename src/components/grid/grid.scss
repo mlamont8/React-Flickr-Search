@@ -1,4 +1,7 @@
 .gridContainer {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: column;
+columns: 20em;
+column-gap: 1em;
 }
