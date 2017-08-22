@@ -4,8 +4,19 @@
 
 .image {
   border-radius: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  break-inside: avoid; }
 
 body {
   margin: 0;
   background: #f3f3f3; }
+
+.main-content:after {
+  content: "";
+  display: block; }
+
+.site-footer, .main-content:after {
+  height: 50px; }
+
+.site-footer {
+  background-color: orange; }

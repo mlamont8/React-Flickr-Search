@@ -74,13 +74,16 @@ class Grid extends React.Component {
       var items = this.state.results
 
     return (
-
+      <div>
         <div className="gridContainer">
           {items.map((item, index) =>
             <Cards key={index}
             cardItem={item} />
-)}
+          )}
+
         </div>
+
+      </div>
     );
   }
 
