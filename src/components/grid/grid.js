@@ -72,18 +72,23 @@ class Grid extends React.Component {
 
   render() {
       var items = this.state.results
+      var term = this.state.term.toUpperCase()
 
     return (
+
       <div>
+          <h1>{term}</h1>
         <div className="gridContainer">
+
+
           {items.map((item, index) =>
             <Cards key={index}
             cardItem={item} />
           )}
 
         </div>
+     </div>
 
-      </div>
     );
   }
 
