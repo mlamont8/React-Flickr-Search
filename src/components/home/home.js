@@ -6,8 +6,21 @@ class Home extends React.Component{
 
   constructor(props) {
     super(props);
-    this.state = {backgroundImage: img1};
+    this.state = {backgroundImage: ''};
   }
+
+  componentDidMount() {
+
+      // generate a random number from  1 and 4
+      let randImage=Math.floor(Math.random()*5)
+      //put image link portion in state
+      this.setState({
+        backgroundImage: 'img' + randImage,
+
+      })
+    }
+
+
 
   render() {
     let backgroundUrl = {
