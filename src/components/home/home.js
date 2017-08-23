@@ -15,7 +15,8 @@ class Home extends React.Component{
       let randImage=Math.floor(Math.random()*5)
       //put image link portion in state
       this.setState({
-        backgroundImage: 'img' + randImage,
+        // backgroundImage: 'img' + randImage,
+        backgroundImage: img1
 
       })
     }
@@ -24,10 +25,10 @@ class Home extends React.Component{
 
   render() {
     let backgroundUrl = {
-  "background-image" : "url(../images/" + this.state.backgroundImage +")"
+  "backgroundImage" : "url(" + this.state.backgroundImage +")"
 }
     return (
-      <div className="home-container" bsstyle={backgroundUrl}>
+      <div className="home-container" style={backgroundUrl}>
         <h1>Home Component</h1>
       </div>
     )
