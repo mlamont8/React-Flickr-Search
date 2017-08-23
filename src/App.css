@@ -3,7 +3,13 @@
 
 .navbar-default .navbar-brand {
   font-family: 'Encode Sans Condensed', sans-serif;
-  font-family: 'Pacifico', cursive; }
+  font-family: 'Pacifico', cursive;
+  color: #f2f2f2; }
+
+.home-container {
+  background-size: 100%;
+  min-height: 500px;
+  min-width: 80%; }
 
 .gridContainer {
   columns: 20em;
