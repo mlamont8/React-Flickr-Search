@@ -1,5 +1,6 @@
 .navbar-default {
-  background-color: #444; }
+  background-color: #444;
+  margin-bottom: 0; }
 
 .navbar-default .navbar-brand {
   font-family: 'Encode Sans Condensed', sans-serif;

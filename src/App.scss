@@ -12,6 +12,10 @@ body {
   font-family: 'Encode Sans Condensed', sans-serif;
 }
 
+.main-content {
+  padding: 0;
+}
+
 .main-content:after {
   content: "";
   display: block;

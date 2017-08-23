@@ -1,5 +1,6 @@
 .navbar-default {
-  background-color: #444; }
+  background-color: #444;
+  margin-bottom: 0; }
 
 .navbar-default .navbar-brand {
   font-family: 'Encode Sans Condensed', sans-serif;
@@ -30,6 +31,9 @@ body {
   margin: 0;
   background: #f3f3f3;
   font-family: 'Encode Sans Condensed', sans-serif; }
+
+.main-content {
+  padding: 0; }
 
 .main-content:after {
   content: "";

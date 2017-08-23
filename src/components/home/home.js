@@ -29,7 +29,6 @@ class Home extends React.Component{
 }
     return (
       <div className="home-container" style={backgroundUrl}>
-        <h1>Home Component</h1>
       </div>
     )
   }
