@@ -1,13 +1,14 @@
 @import "./components/header/header.scss";
 @import "./components/grid/grid.scss";
 @import "./components/cards/cards.scss";
-// .App {
-//   align-items: center;
-// }
+@import "./components/footer/footer.scss";
+
+
 
 body {
   margin: 0;
   background: #f3f3f3;
+  font-family: 'Encode Sans Condensed', sans-serif;
 }
 
 .main-content:after {
@@ -17,8 +18,4 @@ body {
 
 .site-footer, .main-content:after {
   height: 50px;
-}
-
-.site-footer {
-  background-color: orange;
 }
