@@ -12,8 +12,9 @@
   border-radius: 0; }
 
 .home-container {
+  background: url("./images/img1.jpg");
   background-size: 100%;
-  min-height: 500px;
+  min-height: 700px;
   min-width: 80%; }
 
 .gridContainer {
