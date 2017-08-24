@@ -19,7 +19,8 @@
 
 .gridContainer {
   columns: 20em;
-  column-gap: 1em; }
+  column-gap: 1em;
+  padding: 10px; }
 
 .search-title {
   width: 100%; }
@@ -42,7 +43,8 @@ body {
   font-family: 'Encode Sans Condensed', sans-serif; }
 
 .main-content {
-  padding: 0; }
+  padding: 0;
+  background-color: #f3f3f3; }
 
 .main-content:after {
   content: "";
