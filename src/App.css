@@ -25,6 +25,9 @@
 .search-title {
   width: 100%; }
 
+.gridName {
+  padding-left: 20px; }
+
 .image {
   border-radius: 10px;
   overflow: hidden;

@@ -1,0 +1,10 @@
+.gridContainer {
+  columns: 20em;
+  column-gap: 1em;
+  padding: 10px; }
+
+.search-title {
+  width: 100%; }
+
+.gridName {
+  padding-left: 20px; }

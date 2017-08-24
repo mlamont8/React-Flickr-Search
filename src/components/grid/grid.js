@@ -9,7 +9,8 @@ class Grid extends React.Component {
     super(props);
     this.state = {
       results: [],
-      term: ''
+      term: '',
+      isLoading: true
     };
 
     this.urlParse = this.urlParse.bind(this);
@@ -27,13 +28,15 @@ class Grid extends React.Component {
       //Check to make sure search term actually changed
       if(JSON.stringify(this.props.location.search) !== JSON.stringify(nextProps.location.search))
         {
+          this.setState({
+              isLoading: true
+      })
           this.urlParse();
     }
   }
 
 
   apiPull(search) {
-    console.log(search);
      return axios.get('https://api.flickr.com/services/rest',{
       params: {
       method: 'flickr.photos.search',
@@ -46,9 +49,9 @@ class Grid extends React.Component {
   }
     })
     .then(function (response) {
-      console.log(response.data);
       this.setState({
-        results: response.data.photos.photo
+        results: response.data.photos.photo,
+        isLoading: false
       })
     }.bind(this)
   )
@@ -73,11 +76,13 @@ class Grid extends React.Component {
   render() {
       var items = this.state.results
       var term = this.state.term.toUpperCase()
-
-    return (
+      
+        return this.state.isLoading === true
+    ? <p>Loading</p>
+    :
 
       <div>
-          <h1>{term}</h1>
+          <h1 className='gridName'>{term}</h1>
         <div className="gridContainer">
 
 
@@ -89,7 +94,7 @@ class Grid extends React.Component {
         </div>
      </div>
 
-    );
+    
   }
 
 }
