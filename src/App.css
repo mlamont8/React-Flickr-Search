@@ -33,6 +33,21 @@
   overflow: hidden;
   break-inside: avoid; }
 
+.image-container {
+  position: relative; }
+
+.overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  width: 100%;
+  transition: 2s ease; }
+
+.image-container:hover .overlay {
+  height: 100%; }
+
 .site-footer {
   background-color: #444;
   color: #f2f2f2; }

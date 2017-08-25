@@ -10,9 +10,14 @@ class Cards extends React.Component {
       this.props.cardItem.server + '/' + this.props.cardItem.id + '_' + this.props.cardItem.secret +
       '_n.jpg';
     return(
-      <Thumbnail className="image" src={cardUrl} alt="alt">
-            {/* <p>{this.props.cardItem.title}</p> */}
+      <div className='image-container'>
+        {/* Consider making image instead of thumbnail  */}
+      <Thumbnail className="image" src={cardUrl}>
+             {/* <p>{this.props.cardItem.title}</p>  */}
+          {/* <div className='overlay'>{this.props.cardItem.title}</div> */}
+   
           </Thumbnail>
+          </div>
     )
   }
 }
