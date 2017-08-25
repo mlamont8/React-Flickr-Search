@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Thumbnail } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 
 
 class Cards extends React.Component {
@@ -11,13 +11,8 @@ class Cards extends React.Component {
       '_n.jpg';
     return(
       <div className='image-container'>
-        {/* Consider making image instead of thumbnail  */}
-      <Thumbnail className="image" src={cardUrl}>
-             {/* <p>{this.props.cardItem.title}</p>  */}
-          {/* <div className='overlay'>{this.props.cardItem.title}</div> */}
-   
-          </Thumbnail>
-          </div>
+           <Image className="image" src = {cardUrl} responsive />
+       </div>
     )
   }
 }
