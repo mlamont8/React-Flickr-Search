@@ -2,6 +2,7 @@ import React from 'react';
 import queryString from 'query-string';
 import axios from 'axios';
 import Cards from './../cards/cards.js';
+import { Pagination } from 'react-bootstrap';
 
 class Grid extends React.Component {
 
@@ -10,10 +11,13 @@ class Grid extends React.Component {
     this.state = {
       results: [],
       term: '',
-      isLoading: true
+      isLoading: true,
+      activePage: 1,
+      totPages: 1
     };
 
     this.urlParse = this.urlParse.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
 
   }
 
@@ -24,9 +28,11 @@ class Grid extends React.Component {
     }
 
   // If user enters new search term within this component
-    componentDidUpdate(nextProps){
+    componentDidUpdate(nextProps, nextState){
       //Check to make sure search term actually changed
-      if(JSON.stringify(this.props.location.search) !== JSON.stringify(nextProps.location.search))
+      if((JSON.stringify(this.props.location.search) !== JSON.stringify(nextProps.location.search))
+        ||
+            this.state.activePage !== nextState.activePage)
         {
           this.setState({
               isLoading: true
@@ -44,13 +50,16 @@ class Grid extends React.Component {
       text: search,
       safe_search: '1',
       per_page: '20',
+      page: this.state.activePage,
       format: 'json',
       nojsoncallback: 1
   }
     })
     .then(function (response) {
+      console.log(response.data.photos)
       this.setState({
         results: response.data.photos.photo,
+        totPages: Number(response.data.photos.total),
         isLoading: false
       })
     }.bind(this)
@@ -70,6 +79,14 @@ class Grid extends React.Component {
         term: gridTerm.searchTerm
       })
 
+  }
+
+  //Handle page select from pagination
+    handleSelect(eventKey) {
+      console.log(eventKey)
+    this.setState({
+      activePage: eventKey
+    });
   }
 
 
@@ -92,6 +109,17 @@ class Grid extends React.Component {
           )}
 
         </div>
+         <Pagination
+        prev
+        next
+        first
+        last
+        ellipsis
+        boundaryLinks
+        items={this.state.totPages}
+        maxButtons={5}
+        activePage={this.state.activePage}
+        onSelect={this.handleSelect} />
      </div>
 
     
