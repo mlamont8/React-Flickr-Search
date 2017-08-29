@@ -98,7 +98,7 @@ class Grid extends React.Component {
     ? <p>Loading</p>
     :
 
-      <div>
+      <div className="mainGrid">
           <h1 className='gridName'>{term}</h1>
         <div className="gridContainer">
 

@@ -37,7 +37,7 @@ handleSubmit(event) {
     // The new url after search term is submitted
     const searchURL = '?searchTerm='+ this.state.searchTerm;
     return (
-      <Navbar collapseOnSelect>
+      <Navbar collapseOnSelect className='mainNav'>
           <Navbar.Header>
             <Navbar.Brand>
               Flickr Search

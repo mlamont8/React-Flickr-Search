@@ -10,3 +10,8 @@
 
 .navbar {
   border-radius: 0; }
+
+.mainNav {
+  position: absolute;
+  background: transparent;
+  border-color: transparent; }

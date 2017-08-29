@@ -11,6 +11,11 @@
 .navbar {
   border-radius: 0; }
 
+.mainNav {
+  position: absolute;
+  background: transparent;
+  border-color: transparent; }
+
 .home-container {
   background: url("./images/img1.jpg");
   background-size: 100%;
@@ -27,6 +32,9 @@
 
 .gridName {
   padding-left: 20px; }
+
+.mainGrid {
+  padding-top: 30px; }
 
 .image {
   overflow: hidden;
