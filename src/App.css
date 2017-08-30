@@ -31,7 +31,8 @@
   width: 100%; }
 
 .gridName {
-  padding-left: 20px; }
+  padding-left: 20px;
+  color: #f2f2f2; }
 
 .mainGrid {
   padding-top: 30px; }
@@ -41,7 +42,8 @@
   break-inside: avoid; }
 
 .image-container {
-  position: relative; }
+  position: relative;
+  padding-bottom: 10px; }
 
 .overlay {
   position: absolute;
@@ -69,7 +71,7 @@ body {
 
 .main-content {
   padding: 0;
-  background-color: #f3f3f3; }
+  background-color: #000000; }
 
 .main-content:after {
   content: "";

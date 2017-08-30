@@ -3,7 +3,8 @@
   break-inside: avoid; }
 
 .image-container {
-  position: relative; }
+  position: relative;
+  padding-bottom: 10px; }
 
 .overlay {
   position: absolute;
