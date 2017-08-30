@@ -16,3 +16,12 @@ padding: 10px;
 .mainGrid {
   padding-top: 30px;
 }
+
+.pagination>.active>a {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.pagination>li>a {
+  color: #000000;
+}

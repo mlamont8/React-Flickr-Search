@@ -22,6 +22,14 @@
   min-height: 700px;
   min-width: 80%; }
 
+.welcome-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; }
+
 .gridContainer {
   columns: 20em;
   column-gap: 1em;
@@ -36,6 +44,13 @@
 
 .mainGrid {
   padding-top: 30px; }
+
+.pagination > .active > a {
+  background-color: #000000;
+  border-color: #000000; }
+
+.pagination > li > a {
+  color: #000000; }
 
 .image {
   overflow: hidden;
