@@ -2,7 +2,8 @@ import React from 'react';
 import queryString from 'query-string';
 import axios from 'axios';
 import Cards from './../cards/cards.js';
-import { Pagination } from 'react-bootstrap';
+import ModalImage from './../modalImage/modalImage.js'
+import { Pagination, Modal } from 'react-bootstrap';
 
 class Grid extends React.Component {
 
@@ -13,11 +14,15 @@ class Grid extends React.Component {
       term: '',
       isLoading: true,
       activePage: 1,
-      totPages: 1
+      totPages: 1,
+      showModal: false,
+      currentItem: {}
     };
 
     this.urlParse = this.urlParse.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
 
   }
 
@@ -89,6 +94,16 @@ class Grid extends React.Component {
     });
   }
 
+  // Close Modal
+  closeModal(){
+    this.setState({ showModal: false })
+  }
+
+  // Open Modal
+  openModal(){
+    this.setState({ showModal: true })
+  }
+
 
   render() {
       var items = this.state.results
@@ -104,11 +119,30 @@ class Grid extends React.Component {
 
 
           {items.map((item, index) =>
-            <Cards key={index}
-            cardItem={item} />
+            <div>
+            <Cards key={index} 
+              modalToggle={this.openModal}
+              cardItem={item} 
+              currentItem={this.state.currentItem}/>
+            <Modal show={this.state.showModal}
+             onHide={this.closeModal} 
+             bsSize="large"
+             currentItem={this.state.currentItem}>
+            {/* <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-lg">Modal heading</Modal.Title>
+        </Modal.Header>
+              <Modal.Body>
+              Modal
+              </Modal.Body> */}
+              <ModalImage
+                item = {item} />
+              </Modal>
+              </div>
           )}
 
         </div>
+
+        
          <Pagination
         prev
         next
