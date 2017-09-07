@@ -40,7 +40,8 @@ class Grid extends React.Component {
             this.state.activePage !== nextState.activePage)
         {
           this.setState({
-              isLoading: true
+              isLoading: true,
+              activePage: 1
       })
           this.urlParse();
     }
