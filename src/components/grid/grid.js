@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import axios from 'axios';
 import Cards from './../cards/cards.js';
 import ModalImage from './../modalImage/modalImage.js'
-import { Pagination, Modal } from 'react-bootstrap';
+import { Pagination, Modal, Button } from 'react-bootstrap';
 
 class Grid extends React.Component {
 
@@ -126,18 +126,23 @@ class Grid extends React.Component {
             <Cards
               modalToggle={this.openModal.bind(this,item)}
               cardItem={item} />
-              <Modal
-                show={this.state.showModal}
-                onHide={this.closeModal} 
-                >
-          
-                  
-                <ModalImage
-                  cardItem={this.state.currentItem} />
-                                 
-              </Modal>
+
              </div>
           )}
+          <Modal
+            show={this.state.showModal}
+            onHide={this.closeModal}
+          >
+
+
+            <ModalImage
+              cardItem={this.state.currentItem} />
+              <Modal.Footer>
+                  <Modal.Title>{this.state.currentItem.title}</Modal.Title>
+                  <Button onClick={this.closeModal}>Close</Button>
+                </Modal.Footer>
+
+          </Modal>
 
         </div>
 
