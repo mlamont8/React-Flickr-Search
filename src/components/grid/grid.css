@@ -19,3 +19,9 @@
 
 .pagination > li > a {
   color: #000000; }
+
+.modal-container {
+  position: relative; }
+
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute; }

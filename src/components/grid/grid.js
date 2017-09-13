@@ -62,7 +62,6 @@ class Grid extends React.Component {
   }
     })
     .then(function (response) {
-      console.log(response.data.photos)
       this.setState({
         results: response.data.photos.photo,
         totPages: Number(response.data.photos.total),
@@ -122,22 +121,22 @@ class Grid extends React.Component {
         <div className="gridContainer">
 
 
-          {items.map((item, index) =>
-            <div>
-
-            <Cards key={index} 
+          {items.map((item) =>
+           <div key = {item.id}>
+            <Cards
               modalToggle={this.openModal.bind(this,item)}
-              cardItem={item}                      
-              />
+              cardItem={item} />
               <Modal
                 show={this.state.showModal}
                 onHide={this.closeModal} 
-                
-                currentItem={this.state.currentItem}>
+                >
+          
+                  
                 <ModalImage
                   cardItem={this.state.currentItem} />
+                                 
               </Modal>
-              </div>
+             </div>
           )}
 
         </div>

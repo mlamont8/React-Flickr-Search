@@ -9,7 +9,7 @@ class ModalImage extends Component {
 
         return (
             
-            <Image src={cardUrl} />
+            <Image className="modal-image" src={cardUrl} responsive />
         );
     }
 }
