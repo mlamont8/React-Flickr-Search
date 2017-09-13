@@ -101,8 +101,11 @@ class Grid extends React.Component {
   }
 
   // Open Modal
-  openModal(){
-    this.setState({ showModal: true })
+  openModal(item){
+    this.setState({ 
+      showModal: true,
+      currentItem: item
+     })
   }
 
 
@@ -121,22 +124,18 @@ class Grid extends React.Component {
 
           {items.map((item, index) =>
             <div>
+
             <Cards key={index} 
-              modalToggle={this.openModal}
-              cardItem={item} 
-              currentItem={this.state.currentItem}/>
-            <Modal show={this.state.showModal}
-             onHide={this.closeModal} 
-             bsSize="large"
-             currentItem={this.state.currentItem}>
-            {/* <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-lg">Modal heading</Modal.Title>
-        </Modal.Header>
-              <Modal.Body>
-              Modal
-              </Modal.Body> */}
-              <ModalImage
-                item = {item} />
+              modalToggle={this.openModal.bind(this,item)}
+              cardItem={item}                      
+              />
+              <Modal
+                show={this.state.showModal}
+                onHide={this.closeModal} 
+                
+                currentItem={this.state.currentItem}>
+                <ModalImage
+                  cardItem={this.state.currentItem} />
               </Modal>
               </div>
           )}
