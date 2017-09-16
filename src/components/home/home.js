@@ -13,11 +13,6 @@ class Home extends React.Component{
 
     return (
       <div className="home-container">
-        <div className="welcome-text">
-          <h1>Flickr Search</h1>
-          <p>Image search made easy</p>
-        </div>
-
       </div>
     )
   }

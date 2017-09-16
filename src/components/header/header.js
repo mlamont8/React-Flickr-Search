@@ -40,7 +40,7 @@ handleSubmit(event) {
       <Navbar collapseOnSelect className='mainNav'>
           <Navbar.Header>
             <Navbar.Brand>
-              Flickr Search
+              Flickr Image Search
             </Navbar.Brand>
           <Navbar.Toggle />
           </Navbar.Header>
