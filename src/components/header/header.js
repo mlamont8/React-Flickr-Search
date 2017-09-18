@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 
 class Header extends React.Component{
@@ -40,7 +40,7 @@ handleSubmit(event) {
       <Navbar collapseOnSelect className='mainNav'>
           <Navbar.Header>
             <Navbar.Brand>
-              Flickr Image Search
+              <Link to="/">Flickr Image Search</Link>
             </Navbar.Brand>
           <Navbar.Toggle />
           </Navbar.Header>

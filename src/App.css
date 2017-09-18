@@ -58,7 +58,15 @@
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute; }
 
+.modal-footer {
+  background-color: #000000;
+  color: #ffffff; }
+
+.modal-title {
+  padding-bottom: 20px; }
+
 .image {
+  border-radius: 10px;
   overflow: hidden;
   break-inside: avoid; }
 

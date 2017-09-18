@@ -139,7 +139,7 @@ class Grid extends React.Component {
               cardItem={this.state.currentItem} />
               <Modal.Footer>
                   <Modal.Title>{this.state.currentItem.title}</Modal.Title>
-                  <Button onClick={this.closeModal}>Close</Button>
+                  <Button bsStyle="info" onClick={this.closeModal}>Close</Button>
                 </Modal.Footer>
 
           </Modal>
