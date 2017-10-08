@@ -2,6 +2,7 @@ import React from 'react';
 import queryString from 'query-string';
 import axios from 'axios';
 import Cards from './../cards/cards.js';
+import Loader from './../loader/loader.js';
 import ModalImage from './../modalImage/modalImage.js'
 import { Pagination, Modal, Button } from 'react-bootstrap';
 
@@ -113,7 +114,7 @@ class Grid extends React.Component {
       var term = this.state.term.toUpperCase()
       
         return this.state.isLoading === true
-    ? <p>Loading</p>
+    ? <Loader />
     :
 
       <div className="mainGrid">
