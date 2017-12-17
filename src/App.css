@@ -66,29 +66,14 @@
   padding-bottom: 20px; }
 
 .image {
-  border-radius: 10px;
-  overflow: hidden;
-  break-inside: avoid; }
-
-.image-container {
   position: relative;
-  padding-bottom: 10px; }
-  .image-container :hover {
-    border-style: solid;
-    border-width: 1px;
-    border-color: blue; }
+  border-radius: 2px;
+  padding-bottom: 10px;
+  break-inside: avoid;
+  transition: all .5s ease-in-out; }
 
-.overlay {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  right: 0;
-  background-color: #008CBA;
-  width: 100%;
-  transition: 2s ease; }
-
-.image-container:hover .overlay {
-  height: 100%; }
+.image:hover {
+  transform: scale(1.1); }
 
 .site-footer {
   background-color: #444;

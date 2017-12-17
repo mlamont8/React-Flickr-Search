@@ -1,0 +1,21 @@
+// _cards.scss
+
+
+      .image{
+        position: relative;
+        border-radius: 2px;
+        padding-bottom: 10px;
+        break-inside: avoid;
+        transition: all .5s ease-in-out;
+
+      }
+
+      // image scale on hover
+
+      .image:hover {
+        transform: scale(1.1);
+      }
+   
+
+
+

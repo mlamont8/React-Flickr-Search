@@ -10,9 +10,9 @@ class Cards extends React.Component {
       this.props.cardItem.server + '/' + this.props.cardItem.id + '_' + this.props.cardItem.secret +
       '_z.jpg';
     return(
-      <div className='image-container' onClick={this.props.modalToggle}>
-           <Image className="image" src = {cardUrl} responsive />
-       </div>
+     
+           <Image className="image" src = {cardUrl} responsive onClick={this.props.modalToggle} />
+   
     )
   }
 }
