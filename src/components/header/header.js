@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, FormGroup, FormControl, Button } from "react-bootstrap";
+import { Navbar, FormGroup, FormControl } from "react-bootstrap";
 import { Redirect, Link } from "react-router-dom";
 
 class Header extends React.Component {
