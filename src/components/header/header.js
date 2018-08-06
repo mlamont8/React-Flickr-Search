@@ -3,37 +3,9 @@ import { Navbar, FormGroup, FormControl, Button } from "react-bootstrap";
 import { Redirect, Link } from "react-router-dom";
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: "",
-      searchTerm: "",
-      formSubmit: false
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({
-      searchTerm: "",
-      value: event.target.value,
-      formSubmit: false
-    });
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.setState({
-      searchTerm: this.state.value,
-      value: "",
-      formSubmit: true
-    });
-  }
-
   render() {
     // The new url after search term is submitted
-    const searchURL = "?searchTerm=" + this.state.searchTerm;
+    const searchURL = "?searchTerm=" + this.props.searchTerm;
     return (
       <Navbar collapseOnSelect className="mainNav">
         <Navbar.Header>
@@ -45,19 +17,19 @@ class Header extends React.Component {
 
         <Navbar.Collapse>
           <Navbar.Form pullRight>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit}>
               <FormGroup>
                 <FormControl
                   type="text"
                   placeholder="Search"
-                  value={this.state.value}
-                  onChange={this.handleChange}
+                  value={this.props.value}
+                  onChange={this.props.handleChange}
                 />
               </FormGroup>
             </form>
           </Navbar.Form>
 
-          {this.state.formSubmit && (
+          {this.props.formSubmit && (
             <Redirect
               to={{
                 pathname: "/results",
