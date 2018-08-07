@@ -9,7 +9,7 @@ class Header extends React.Component {
       <Navbar collapseOnSelect className="mainNav">
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to="/">Flickr Image Search</Link>
+            <Link to="/">Quickr Image Search</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

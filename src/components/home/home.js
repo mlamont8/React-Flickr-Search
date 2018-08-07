@@ -9,6 +9,9 @@ class Home extends React.Component {
 
     return (
       <div className="home-container">
+
+        <h1>QUICKR IMAGE SEARCH</h1>
+
         <div className="homeForm">
           <form onSubmit={this.props.handleSubmit}>
             <FormGroup>
