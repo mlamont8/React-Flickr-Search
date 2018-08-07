@@ -1,3 +1,4 @@
+// imports
 @import "./components/header/header";
 @import "./components/home/home";
 @import "./components/grid/grid";
@@ -6,12 +7,18 @@
 @import "./components/modalImage/modalImage";
 @import "./components/loader/loader";
 
+// fonts
+@font-face {
+  font-family: 'Futura Std Book';
+  src: local('Futura Std Book'), url('./fonts/Futura Std Book.otf') format('opentype');
+}
+
 
 
 body {
   margin: 0;
   background: #f3f3f3;
-  font-family: 'Encode Sans Condensed', sans-serif;
+  font-family: 'Futura Std Book', sans-serif;
 }
 
 .main-content {

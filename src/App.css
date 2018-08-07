@@ -120,10 +120,14 @@ footer p {
   background-color: black;
   min-height: 700px; }
 
+@font-face {
+  font-family: 'Futura Std Book';
+  src: local("Futura Std Book"), url("./fonts/Futura Std Book.otf") format("opentype"); }
+
 body {
   margin: 0;
   background: #f3f3f3;
-  font-family: 'Encode Sans Condensed', sans-serif; }
+  font-family: 'Futura Std Book', sans-serif; }
 
 .main-content {
   padding: 0;
