@@ -1,11 +1,12 @@
 import React from 'react';
+import { FormGroup, FormControl } from "react-bootstrap";
 
 
-class Home extends React.Component{
+class Home extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {backgroundImage: ''};
+    this.state = { backgroundImage: '' };
   }
 
 
@@ -13,6 +14,7 @@ class Home extends React.Component{
 
     return (
       <div className="home-container">
+
       </div>
     )
   }
