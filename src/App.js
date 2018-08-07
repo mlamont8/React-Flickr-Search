@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/header/header.js";
-import { Route } from "react-router-dom";
+import { Route, withRouter } from "react-router-dom";
 import Home from "./components/home/home.js";
 import Grid from "./components/grid/grid.js";
 import Footer from "./components/footer/footer.js";
@@ -12,7 +12,6 @@ class App extends React.Component {
     this.state = {
       value: "",
       searchTerm: "",
-      formSubmit: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,17 +21,19 @@ class App extends React.Component {
     this.setState({
       searchTerm: "",
       value: event.target.value,
-      formSubmit: false
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    const location = {
+      pathname: "/results",
+      search: `searchTerm=${this.state.value}`,
+    }
     this.setState({
-      searchTerm: this.state.value,
       value: "",
-      formSubmit: true
     });
+    this.props.history.push(location)
   }
 
   render() {
@@ -55,4 +56,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

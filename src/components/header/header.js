@@ -1,11 +1,10 @@
 import React from "react";
 import { Navbar, FormGroup, FormControl } from "react-bootstrap";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
     // The new url after search term is submitted
-    const searchURL = "?searchTerm=" + this.props.searchTerm;
     return (
       <Navbar collapseOnSelect className="mainNav">
         <Navbar.Header>
@@ -29,14 +28,7 @@ class Header extends React.Component {
             </form>
           </Navbar.Form>
 
-          {this.props.formSubmit && (
-            <Redirect
-              to={{
-                pathname: "/results",
-                search: searchURL
-              }}
-            />
-          )}
+
         </Navbar.Collapse>
       </Navbar>
     );
