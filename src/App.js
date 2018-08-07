@@ -37,17 +37,30 @@ class App extends React.Component {
   }
 
   render() {
+    const { pathname } = this.props.location
     return (
       <div className="App">
-        <Header
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          value={this.state.value}
-          searchTerm={this.state.searchTerm}
-          formSubmit={this.state.formSubmit}
-        />
+        {(pathname === "/") ?
+          null
+          :
+          <Header
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            value={this.state.value}
+            searchTerm={this.state.searchTerm}
+            formSubmit={this.state.formSubmit}
+          />
+        }
         <div className="container-fluid main-content">
-          <Route exact path="/" component={Home} />
+          <Route exact
+            path="/"
+            render={(props) =>
+              <Home
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                value={this.state.value}
+                searchTerm={this.state.searchTerm}
+                formSubmit={this.state.formSubmit} />} />
           <Route path="/results" component={Grid} />
         </div>
         <Footer />
