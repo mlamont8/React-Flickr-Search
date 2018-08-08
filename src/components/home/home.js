@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormGroup, FormControl, InputGroup, Glyphicon } from "react-bootstrap";
+import { FormGroup, FormControl, Glyphicon } from "react-bootstrap";
 
 
 class Home extends React.Component {
@@ -9,9 +9,7 @@ class Home extends React.Component {
 
     return (
       <div className="home-container">
-
         <h1>QUICKR IMAGE SEARCH</h1>
-
         <div className="homeForm">
           <form onSubmit={this.props.handleSubmit}>
             <FormGroup bsClass="form-group has-feedback has-feedback-left">
