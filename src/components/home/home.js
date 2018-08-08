@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormGroup, FormControl } from "react-bootstrap";
+import { FormGroup, FormControl, InputGroup, Glyphicon } from "react-bootstrap";
 
 
 class Home extends React.Component {
@@ -14,13 +14,14 @@ class Home extends React.Component {
 
         <div className="homeForm">
           <form onSubmit={this.props.handleSubmit}>
-            <FormGroup>
+            <FormGroup bsClass="form-group has-feedback has-feedback-left">
               <FormControl
                 type="text"
                 placeholder="Search"
                 value={this.props.value}
                 onChange={this.props.handleChange}
               />
+              <Glyphicon glyph="search" className="form-control-feedback" />
             </FormGroup>
           </form>
         </div>
