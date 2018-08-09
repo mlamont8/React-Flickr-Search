@@ -34,10 +34,11 @@
   background-color: #000;
   height: 100vh; }
   .home-container h1 {
-    color: #fff; }
+    color: #fff;
+    padding-bottom: 50px; }
 
 .homeForm {
-  width: 300px; }
+  width: 250px; }
 
 .has-feedback .form-control {
   padding-right: 34px; }
@@ -163,7 +164,7 @@ body {
 
 .main-content {
   padding: 0;
-  background-color: #000000; }
+  background-color: #f3f3f3; }
 
 .main-content:after {
   content: "";
