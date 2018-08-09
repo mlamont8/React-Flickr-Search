@@ -6,7 +6,7 @@
 .navbar-default .navbar-brand {
   font-family: "Encode Sans Condensed", sans-serif;
   font-family: "Pacifico", cursive;
-  color: #f2f2f2; }
+  color: #040404; }
 
 .navbar {
   border-radius: 0; }
@@ -76,7 +76,7 @@
 
 .gridName {
   padding-left: 20px;
-  color: #f2f2f2; }
+  color: #040404; }
 
 .mainGrid {
   padding-top: 30px; }
@@ -91,7 +91,8 @@
 .modal-container {
   position: relative; }
 
-.modal-container .modal, .modal-container .modal-backdrop {
+.modal-container .modal,
+.modal-container .modal-backdrop {
   position: absolute; }
 
 .modal-footer {
