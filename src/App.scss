@@ -6,24 +6,24 @@
 @import "./components/footer/footer";
 @import "./components/modalImage/modalImage";
 @import "./components/loader/loader";
+@import "./components/inputForm/inputForm";
 
 // fonts
 @font-face {
-  font-family: 'Futura Std Book';
-  src: local('Futura Std Book'), url('./fonts/Futura Std Book.otf') format('opentype');
+  font-family: "Futura Std Book";
+  src: local("Futura Std Book"),
+    url("./fonts/Futura Std Book.otf") format("opentype");
 }
-
-
 
 body {
   margin: 0;
   background: #f3f3f3;
-  font-family: 'Futura Std Book', sans-serif;
+  font-family: "Futura Std Book", sans-serif;
 }
 
 .main-content {
   padding: 0;
-  background-color:#f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .main-content:after {
@@ -31,8 +31,6 @@ body {
   display: block;
 }
 
-.site-footer{
+.site-footer {
   height: 50px;
 }
-
-

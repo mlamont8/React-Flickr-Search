@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, FormGroup, FormControl } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import InputForm from "../inputForm/inputForm";
 
 class Header extends React.Component {
   render() {
@@ -16,19 +17,12 @@ class Header extends React.Component {
 
         <Navbar.Collapse>
           <Navbar.Form pullRight>
-            <form onSubmit={this.props.handleSubmit}>
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  placeholder="Search"
-                  value={this.props.value}
-                  onChange={this.props.handleChange}
-                />
-              </FormGroup>
-            </form>
+            <InputForm
+              handleSubmit={this.props.handleSubmit}
+              value={this.props.value}
+              handleChange={this.props.handleChange}
+            />
           </Navbar.Form>
-
-
         </Navbar.Collapse>
       </Navbar>
     );

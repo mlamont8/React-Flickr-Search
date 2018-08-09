@@ -4,8 +4,6 @@
   margin-bottom: 0; }
 
 .navbar-default .navbar-brand {
-  font-family: "Encode Sans Condensed", sans-serif;
-  font-family: "Pacifico", cursive;
   color: #040404; }
 
 .navbar {
@@ -36,35 +34,6 @@
   .home-container h1 {
     color: #fff;
     padding-bottom: 50px; }
-
-.homeForm {
-  width: 250px; }
-
-.has-feedback .form-control {
-  padding-right: 34px; }
-
-.has-feedback-left .form-control {
-  padding-right: 12px;
-  padding-left: 34px; }
-
-.has-feedback-left .form-control-feedback {
-  left: 0; }
-
-.form-control-feedback {
-  line-height: 34px !important; }
-
-@media (min-width: 768px) {
-  .form-inline .inline-feedback {
-    position: relative;
-    display: inline-block; }
-  .form-inline .has-feedback .form-control-feedback {
-    top: 0; } }
-
-.form-horizontal .has-feedback-left .form-control-feedback {
-  left: 15px; }
-
-.form-control-feedback {
-  color: #cccccc; }
 
 .gridContainer {
   columns: 20em;
@@ -154,14 +123,43 @@ footer p {
   background-color: black;
   min-height: 700px; }
 
+.homeForm {
+  width: 250px; }
+
+.has-feedback .form-control {
+  padding-right: 34px; }
+
+.has-feedback-left .form-control {
+  padding-right: 12px;
+  padding-left: 34px; }
+
+.has-feedback-left .form-control-feedback {
+  left: 0; }
+
+.form-control-feedback {
+  line-height: 34px !important; }
+
+@media (min-width: 768px) {
+  .form-inline .inline-feedback {
+    position: relative;
+    display: inline-block; }
+  .form-inline .has-feedback .form-control-feedback {
+    top: 0; } }
+
+.form-horizontal .has-feedback-left .form-control-feedback {
+  left: 15px; }
+
+.form-control-feedback {
+  color: #cccccc; }
+
 @font-face {
-  font-family: 'Futura Std Book';
+  font-family: "Futura Std Book";
   src: local("Futura Std Book"), url("./fonts/Futura Std Book.otf") format("opentype"); }
 
 body {
   margin: 0;
   background: #f3f3f3;
-  font-family: 'Futura Std Book', sans-serif; }
+  font-family: "Futura Std Book", sans-serif; }
 
 .main-content {
   padding: 0;
