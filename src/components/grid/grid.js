@@ -35,17 +35,11 @@ class Grid extends React.Component {
     //Check to make sure search term actually changed
     if (
       JSON.stringify(this.props.location.search) !==
-        JSON.stringify(nextProps.location.search) ||
-      this.state.activePage !== nextState.activePage
+      JSON.stringify(nextProps.location.search)
     ) {
       this.setState({
-        isLoading: true,
-        activePage: 1
+        isLoading: true
       });
-      console.log("props", this.props.location.search);
-      console.log("nextProps", nextProps.location.search);
-      console.log("state", this.state.activePage);
-      console.log("nextState", nextState.activePage);
       this.urlParse();
     }
   }
@@ -58,7 +52,7 @@ class Grid extends React.Component {
           api_key: "1dfbed40745d1f76dc935c78c30abf16",
           text: search,
           safe_search: "1",
-          per_page: "20",
+          per_page: "40",
           page: this.state.activePage,
           format: "json",
           nojsoncallback: 1
@@ -95,6 +89,7 @@ class Grid extends React.Component {
     this.setState({
       activePage: eventKey
     });
+    this.apiPull(this.state.term);
   }
 
   // Close Modal
@@ -117,9 +112,11 @@ class Grid extends React.Component {
     return this.state.isLoading === true ? (
       <Loader />
     ) : (
-      <div className="mainGrid">
-        <h1 className="gridName">{term}</h1>
-        <div className="gridContainer">
+      <div className="mainGrid container">
+        <div className="row">
+          <h1 className="gridName">{term}</h1>
+        </div>
+        <div className="gridContainer row">
           {items.map(item => (
             <div key={item.id}>
               <Cards

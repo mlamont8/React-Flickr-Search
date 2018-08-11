@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       value: "",
-      searchTerm: "",
+      searchTerm: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ class App extends React.Component {
   handleChange(event) {
     this.setState({
       searchTerm: "",
-      value: event.target.value,
+      value: event.target.value
     });
   }
 
@@ -28,21 +28,19 @@ class App extends React.Component {
     event.preventDefault();
     const location = {
       pathname: "/results",
-      search: `searchTerm=${this.state.value}`,
-    }
+      search: `searchTerm=${this.state.value}`
+    };
     this.setState({
-      value: "",
+      value: ""
     });
-    this.props.history.push(location)
+    this.props.history.push(location);
   }
 
   render() {
-    const { pathname } = this.props.location
+    const { pathname } = this.props.location;
     return (
       <div className="App">
-        {(pathname === "/") ?
-          null
-          :
+        {pathname === "/" ? null : (
           <Header
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
@@ -50,17 +48,21 @@ class App extends React.Component {
             searchTerm={this.state.searchTerm}
             formSubmit={this.state.formSubmit}
           />
-        }
-        <div className="container-fluid main-content">
-          <Route exact
+        )}
+        <div className="main-content">
+          <Route
+            exact
             path="/"
-            render={(props) =>
+            render={props => (
               <Home
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 value={this.state.value}
                 searchTerm={this.state.searchTerm}
-                formSubmit={this.state.formSubmit} />} />
+                formSubmit={this.state.formSubmit}
+              />
+            )}
+          />
           <Route path="/results" component={Grid} />
         </div>
         <Footer />
