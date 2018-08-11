@@ -14,10 +14,6 @@
   background: transparent;
   border-color: transparent; }
 
-@media only screen and (max-width: 600px) {
-  .home-container h1 {
-    font-size: 25px; } }
-
 .home-container {
   display: flex;
   flex-direction: column;
@@ -33,7 +29,12 @@
   height: 100vh; }
   .home-container h1 {
     color: #fff;
-    padding-bottom: 50px; }
+    padding-bottom: 50px;
+    font-size: 46px; }
+
+@media only screen and (max-width: 600px) {
+  .home-container h1 {
+    font-size: 25px; } }
 
 .gridContainer {
   columns: 20em;
