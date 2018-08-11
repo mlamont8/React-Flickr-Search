@@ -4,7 +4,7 @@ import axios from "axios";
 import Cards from "./../cards/cards.js";
 import Loader from "./../loader/loader.js";
 import ModalImage from "./../modalImage/modalImage.js";
-import { Pagination, Modal, Button } from "react-bootstrap";
+import { Pagination, Modal, Button, Pager } from "react-bootstrap";
 
 class Grid extends React.Component {
   constructor(props) {
@@ -114,7 +114,22 @@ class Grid extends React.Component {
     ) : (
       <div className="mainGrid container">
         <div className="row">
-          <h1 className="gridName">{term}</h1>
+          <div className="col-md-6">
+            <h1 className="gridName">{term}</h1>
+          </div>
+          <div className="col-md-6">
+            <div>
+              <Pager>
+                <Pager.Item next href="#">
+                  Previous
+                </Pager.Item>{" "}
+                <Pager.Item next href="#">
+                  Next
+                </Pager.Item>
+              </Pager>
+            </div>
+            <div className="pull-right">Page : {this.state.activePage}</div>
+          </div>
         </div>
         <div className="gridContainer row">
           {items.map(item => (
