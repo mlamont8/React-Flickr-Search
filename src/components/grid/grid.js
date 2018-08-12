@@ -23,6 +23,7 @@ class Grid extends React.Component {
     this.handleSelect = this.handleSelect.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.pagerClick = this.pagerClick.bind(this);
   }
 
   // For initial render
@@ -80,7 +81,8 @@ class Grid extends React.Component {
     // pull from flickr api
     this.apiPull(gridTerm.searchTerm, 1);
     this.setState({
-      term: gridTerm.searchTerm
+      term: gridTerm.searchTerm,
+      isLoading: true
     });
   }
 
@@ -106,6 +108,20 @@ class Grid extends React.Component {
     });
   }
 
+  // Logic for pager of next or previous
+  pagerClick(e, value) {
+    let newValue = 0;
+    value === "Next"
+      ? (newValue = this.state.activePage + 1)
+      : (newValue = this.state.activePage - 1);
+    if (newValue !== 0) {
+      this.apiPull(this.state.term, newValue);
+      this.setState({
+        activePage: newValue
+      });
+    }
+  }
+
   render() {
     var items = this.state.results;
     var term = this.state.term.toUpperCase();
@@ -120,16 +136,14 @@ class Grid extends React.Component {
           </div>
           <div className="col-md-6">
             <div>
-              <Pagination
-                prev
-                next
-                first
-                ellipsis
-                items={this.state.totPages}
-                maxButtons={3}
-                activePage={this.state.activePage}
-                onSelect={this.handleSelect}
-              />
+              <Pager>
+                <Pager.Item next onClick={e => this.pagerClick(e, "Previous")}>
+                  Previous
+                </Pager.Item>{" "}
+                <Pager.Item next onClick={e => this.pagerClick(e, "Next")}>
+                  Next
+                </Pager.Item>
+              </Pager>
             </div>
             <div className="pull-right">Page : {this.state.activePage}</div>
           </div>
