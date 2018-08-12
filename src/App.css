@@ -51,13 +51,6 @@
 .mainGrid {
   padding-top: 30px; }
 
-.pagination > .active > a {
-  background-color: #000000;
-  border-color: #000000; }
-
-.pagination > li > a {
-  color: #000000; }
-
 .modal-container {
   position: relative; }
 
@@ -71,6 +64,15 @@
 
 .modal-title {
   padding-bottom: 20px; }
+
+.pager {
+  margin-right: 20px; }
+  .pager .next > a {
+    margin: 0 3px 0 3px; }
+
+.pagination > li > a,
+.pagination > li > span {
+  border-radius: 50%; }
 
 .image {
   position: relative;

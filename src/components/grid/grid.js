@@ -137,12 +137,12 @@ class Grid extends React.Component {
           <div className="col-md-6">
             <div>
               <Pager>
-                <Pager.Item next onClick={e => this.pagerClick(e, "Previous")}>
-                  Previous
-                </Pager.Item>{" "}
                 <Pager.Item next onClick={e => this.pagerClick(e, "Next")}>
                   Next
                 </Pager.Item>
+                <Pager.Item next onClick={e => this.pagerClick(e, "Previous")}>
+                  Previous
+                </Pager.Item>{" "}
               </Pager>
             </div>
             <div className="pull-right">Page : {this.state.activePage}</div>
@@ -175,6 +175,7 @@ class Grid extends React.Component {
           last
           ellipsis
           boundaryLinks
+          bsClass="pagination pagination-circle"
           items={this.state.totPages}
           maxButtons={5}
           activePage={this.state.activePage}
