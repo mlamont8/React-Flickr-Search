@@ -44,7 +44,7 @@ class Grid extends React.Component {
     }
   }
 
-  apiPull(search) {
+  apiPull(search, page) {
     return axios
       .get("https://api.flickr.com/services/rest", {
         params: {
@@ -53,7 +53,7 @@ class Grid extends React.Component {
           text: search,
           safe_search: "1",
           per_page: "40",
-          page: this.state.activePage,
+          page: page,
           format: "json",
           nojsoncallback: 1
         }
@@ -66,6 +66,7 @@ class Grid extends React.Component {
             totPages: Number(response.data.photos.total),
             isLoading: false
           });
+          document.body.scrollTop = 0;
         }.bind(this)
       )
       .catch(function(error) {
@@ -77,7 +78,7 @@ class Grid extends React.Component {
   urlParse() {
     let gridTerm = queryString.parse(this.props.location.search);
     // pull from flickr api
-    this.apiPull(gridTerm.searchTerm);
+    this.apiPull(gridTerm.searchTerm, 1);
     this.setState({
       term: gridTerm.searchTerm
     });
@@ -86,10 +87,10 @@ class Grid extends React.Component {
   //Handle page select from pagination
   handleSelect(eventKey) {
     console.log("eventKey", eventKey);
+    this.apiPull(this.state.term, eventKey);
     this.setState({
       activePage: eventKey
     });
-    this.apiPull(this.state.term);
   }
 
   // Close Modal
@@ -119,14 +120,16 @@ class Grid extends React.Component {
           </div>
           <div className="col-md-6">
             <div>
-              <Pager>
-                <Pager.Item next href="#">
-                  Previous
-                </Pager.Item>{" "}
-                <Pager.Item next href="#">
-                  Next
-                </Pager.Item>
-              </Pager>
+              <Pagination
+                prev
+                next
+                first
+                ellipsis
+                items={this.state.totPages}
+                maxButtons={3}
+                activePage={this.state.activePage}
+                onSelect={this.handleSelect}
+              />
             </div>
             <div className="pull-right">Page : {this.state.activePage}</div>
           </div>
