@@ -18,7 +18,6 @@ class AnimatedButton extends React.Component {
             const formActive = this.state.btnToggle ? 'animatedInput active' : 'animatedInput';
             const btnClose = this.state.btnToggle ? 'inputBtn close' : 'inputBtn';
             return (
-              <div className="homeContainer">
                 <div className="homeMiddle">
             
                 <form className="search-box" onSubmit={this.props.handleSubmit}>
@@ -31,8 +30,7 @@ class AnimatedButton extends React.Component {
                     className={btnClose}
                     onClick={this.handleClick}></button>
                 </form>
-                </div>
-            </div>
+                 </div>
             );
           }
         }

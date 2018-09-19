@@ -1,25 +1,44 @@
 // _home.scss
 
 
-.home-container {
+.frontImageContainer {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  // background: url("./images/img1.jpg") no-repeat center center fixed;
+  background: url("./images/img1.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-color: #000;
   height: 100vh;
+  animation: slide 10s infinite;
   h1 {
     color: #fff;
-    padding-bottom: 50px;
-    font-size: 46px;
+    margin-top: 50px;
+    font-size: 60px;
+    letter-spacing: 15px;
+  }
+  p {
+    color: #fff;
+    font-size: 16px;
   }
 }
+
+@keyframes slide {
+  0%{
+    background-image: url("./images/img1.jpg")
+  }
+  33%{
+    background-image: url("./images/img2.jpg")
+  }
+  67%{
+    background-image: url("./images/img3.jpg")
+  }
+}
+
+
 
 @media only screen and (max-width: 600px) {
   .home-container h1 {

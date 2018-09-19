@@ -14,22 +14,35 @@
   background: transparent;
   border-color: transparent; }
 
-.home-container {
+.frontImageContainer {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background: url("./images/img1.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-color: #000;
-  height: 100vh; }
-  .home-container h1 {
+  height: 100vh;
+  animation: slide 10s infinite; }
+  .frontImageContainer h1 {
     color: #fff;
-    padding-bottom: 50px;
-    font-size: 46px; }
+    margin-top: 50px;
+    font-size: 60px;
+    letter-spacing: 15px; }
+  .frontImageContainer p {
+    color: #fff;
+    font-size: 16px; }
+
+@keyframes slide {
+  0% {
+    background-image: url("./images/img1.jpg"); }
+  33% {
+    background-image: url("./images/img2.jpg"); }
+  67% {
+    background-image: url("./images/img3.jpg"); } }
 
 @media only screen and (max-width: 600px) {
   .home-container h1 {
@@ -155,16 +168,17 @@ footer p {
   color: #cccccc; }
 
 .homeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
-  height: 500px;
-  background: #2ecc71; }
+  background: none; }
 
 .homeMiddle {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  margin-top: 50px; }
 
 .animatedInput {
   width: 60px;
