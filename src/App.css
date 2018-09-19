@@ -44,10 +44,6 @@
   67% {
     background-image: url("./images/img3.jpg"); } }
 
-@media only screen and (max-width: 600px) {
-  .home-container h1 {
-    font-size: 25px; } }
-
 .gridContainer {
   columns: 20em;
   column-gap: 1em;
