@@ -6,17 +6,17 @@ class Home extends React.Component {
 
   render() {
     return (
-  
+
       <div className="frontImageContainer">
-      <div><h1>QUICKER</h1></div>
-      <p>Image Search</p>
-      <div>
-        <AnimatedButton
-          handleSubmit={this.props.handleSubmit}
-          value={this.props.value}
-          handleChange={this.props.handleChange}
-       />
-       </div>
+        <div><h1>QUICKR</h1></div>
+        <p>Image Search</p>
+        <div>
+          <AnimatedButton
+            handleSubmit={this.props.handleSubmit}
+            value={this.props.value}
+            handleChange={this.props.handleChange}
+          />
+        </div>
       </div>
     );
   }
